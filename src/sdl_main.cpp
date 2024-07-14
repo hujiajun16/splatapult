@@ -95,6 +95,11 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    // ÐÞ¸´Renderdoc×¥Ö¡Bug (20240714) [HJJ]
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
+
     ctx.gl_context = SDL_GL_CreateContext(ctx.window);
 
     SDL_GL_MakeCurrent(ctx.window, ctx.gl_context);
